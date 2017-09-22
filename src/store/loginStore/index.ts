@@ -9,7 +9,7 @@ class LoginStore {
   public loading: boolean = false
 
   @action
-  getUserInfo() {
+  getUserInfo = () => {
     this.loading = true
     api.getUserInfo({}).then(res => {
       this.userInfo = res

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
-import { HashRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'mobx-react'
 
 import 'styles/app.scss'
