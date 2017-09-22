@@ -9,6 +9,7 @@ typescript + react的简单起手模板
 - mobx
 - async component
 - svg icon
+- 接入antd并可按需加载
 
 ### 基础安装
 - [typed-css-modules](https://github.com/Quramy/typed-css-modules)

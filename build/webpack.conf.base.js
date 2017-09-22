@@ -1,8 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var utils = require('./utils')
 var config = require('./config')
+var tsImportPlugin = require('ts-import-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -41,6 +41,7 @@ module.exports = {
       {
         test: /\.(ts(x?)|js(x?))$/,
         include: [resolve('src'), resolve('test')],
+        exclude: /node_modules/,
         rules: [
           {
             loader: 'react-hot-loader/webpack',
@@ -48,7 +49,14 @@ module.exports = {
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true
+              transpileOnly: true,
+              getCustomTransformers: () => ({
+                before: [tsImportPlugin({
+                  libraryName: 'antd',
+                  style: true,
+                  libraryDirectory: 'lib'
+                })]
+              })
             }
           }
         ]

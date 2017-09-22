@@ -1,9 +1,10 @@
+import 'styles/app.scss'
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'mobx-react'
 
-import 'styles/app.scss'
 import App from 'router'
 import { RequireImport } from 'types/interface'
 import store from 'store'

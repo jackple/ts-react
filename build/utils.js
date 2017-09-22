@@ -41,6 +41,14 @@ exports.styleLoaders = function (options) {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.less$/,
+        include: resolve('node_modules/antd'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
+        })
       }
     ]
     :
@@ -59,6 +67,15 @@ exports.styleLoaders = function (options) {
         rules: [
           {
             use: ['style-loader', 'css-loader', 'sass-loader']
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        include: resolve('node_modules/antd'),
+        rules: [
+          {
+            use: ['style-loader', 'css-loader', 'less-loader']
           }
         ]
       }
