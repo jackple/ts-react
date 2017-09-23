@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { inject, observer } from 'mobx-react'
+import classNames from 'classnames'
 
 import * as styles from './index.css'
 import * as scssStyles from './index.scss'
@@ -15,11 +16,10 @@ interface Props {
 @observer
 export default class Hello extends React.Component<Props, {}> {
   render() {
-    console.log(styles, scssStyles)
     const { loginStore } = this.props
     return (
       <div className="text-center">
-        <h1 className={styles.test}>css!</h1>
+        <h1 className={classNames(styles.base, styles.test)}>css!</h1>
         <div>
           <h1 className={scssStyles.scss}>scss!</h1>
         </div>
