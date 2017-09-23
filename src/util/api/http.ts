@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as qs from 'qs'
 import { AxiosRequestConfig, HttpResquest } from 'types/interface'
+import { message } from 'antd'
 
 enum HTTPERROR {
   LOGICERROR,
@@ -42,7 +43,6 @@ methods.forEach(v => {
       return cfg
     }, (error) => Promise.reject(error))
     // Add a response interceptor
-    // Add a response interceptor
     instance.interceptors.response.use(response => {
       let rdata = response.data
       if (!isSuccess(v, rdata)) {
@@ -77,6 +77,7 @@ methods.forEach(v => {
     }
     axiosConfig.startTime = new Date()
     return instance.request(axiosConfig).then(res => res).catch(err => {
+      message.error(err.response || err.msg || err.stack || '未知错误')
       return Promise.reject({
         err,
         stack: err.msg || err.stack || ''

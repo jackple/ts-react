@@ -18,6 +18,11 @@ class LoginStore {
       this.loading = false
     })
   }
+
+  @action
+  getError = () => {
+    api.getError({})
+  }
 }
 
 const loginStore = new LoginStore()

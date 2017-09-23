@@ -16,9 +16,10 @@ export default class Hello extends React.Component<Props, {}> {
   render() {
     const { loginStore } = this.props
     return (
-      <div>
+      <div className="text-center">
         <h1 className={styles.test}>Hello!</h1>
         <Button type="primary" onClick={loginStore.getUserInfo}>点击请求</Button>
+        <Button type="danger" onClick={loginStore.getError}>点击错误的请求</Button>
         {
           loginStore.loading
             ?
