@@ -17,7 +17,9 @@ const typingsForCssModulesLoaderConf = {
   loader: 'typings-for-css-modules-loader',
   options: {
     modules: true,
-    namedExport: true
+    namedExport: true,
+    camelCase: true,
+    sass: true
   }
 }
 
@@ -33,6 +35,16 @@ exports.styleLoaders = function (options) {
             typingsForCssModulesLoaderConf
           ]
         }),
+      },
+      {
+        test: /\.scss$/,
+        exclude: resolve('src/styles'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            typingsForCssModulesLoaderConf
+          ]
+        })
       },
       {
         test: /\.scss$/,
@@ -69,7 +81,20 @@ exports.styleLoaders = function (options) {
       },
       {
         test: /\.scss$/,
-        include: resolve('src/style'),
+        exclude: resolve('src/styles'),
+        rules: [
+          {
+            use: [
+              'style-loader',
+              typingsForCssModulesLoaderConf
+            ]
+          }
+        ]
+      },
+      {
+        // 位于src/styles里的不使用css module
+        test: /\.scss$/,
+        include: resolve('src/styles'),
         rules: [
           {
             use: [
@@ -81,6 +106,7 @@ exports.styleLoaders = function (options) {
         ]
       },
       {
+        // 用于antd按需加载
         test: /\.less$/,
         include: resolve('node_modules/antd'),
         rules: [

@@ -10,8 +10,8 @@
 
 module.exports = {
   "ignoreFiles": ["node_modules/**/*.scss"],
-  "extends": "stylelint-config-standard",
-  "plugins": ['stylelint-order'],
+  "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
+  "plugins": ["stylelint-order"],
   "rules": {
     "color-hex-case": null,
     "color-hex-length": null,
