@@ -10,7 +10,7 @@ typescript + react的简单起手模板
 - async component
 - svg icon
 - 接入antd并可按需加载
-- import css时自动生成.css.d.ts
+- import (s)css时自动生成.(s)css.d.ts
 
 ### suggested use
 - [mobx chrome devtool](https://chrome.google.com/webstore/detail/mobx-developer-tools/pfgnfdagidkfgccljigdamigbcnndkod) (非必须)
