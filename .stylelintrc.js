@@ -52,7 +52,7 @@ module.exports = {
       "text"
     ],
     "property-no-unknown": [ true, {
-      "ignoreProperties": ["composes"]
+      "ignoreProperties": ["composes", "global"]
     }],
   }
 }
