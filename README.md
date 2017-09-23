@@ -1,7 +1,7 @@
 # ts-react
 typescript + react的简单起手模板
 
-### 关键词
+### keywords
 - typescript
 - react
 - react-router-4
@@ -10,10 +10,11 @@ typescript + react的简单起手模板
 - async component
 - svg icon
 - 接入antd并可按需加载
+- import css时自动生成.css.d.ts
 
-### 建议安装
+### suggested use
 - [mobx chrome devtool](https://chrome.google.com/webstore/detail/mobx-developer-tools/pfgnfdagidkfgccljigdamigbcnndkod) (非必须)
 
-### 运行
+### run
 1. npm i
 2. npm run dev
