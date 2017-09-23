@@ -39,7 +39,10 @@ exports.styleLoaders = function (options) {
         include: resolve('src/styles'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
         })
       },
       {
@@ -47,7 +50,10 @@ exports.styleLoaders = function (options) {
         include: resolve('node_modules/antd'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'less-loader']
+          use: [
+            'css-loader',
+            'less-loader'
+          ]
         })
       }
     ]
@@ -63,10 +69,14 @@ exports.styleLoaders = function (options) {
       },
       {
         test: /\.scss$/,
-        include: resolve('src/styles'),
+        include: resolve('src/style'),
         rules: [
           {
-            use: ['style-loader', 'css-loader', 'sass-loader']
+            use: [
+              'style-loader',
+              'css-loader',
+              'sass-loader'
+            ]
           }
         ]
       },
@@ -75,7 +85,11 @@ exports.styleLoaders = function (options) {
         include: resolve('node_modules/antd'),
         rules: [
           {
-            use: ['style-loader', 'css-loader', 'less-loader']
+            use: [
+              'style-loader',
+              'css-loader',
+              'less-loader'
+            ]
           }
         ]
       }
