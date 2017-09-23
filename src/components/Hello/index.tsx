@@ -24,7 +24,9 @@ export default class Hello extends React.Component<Props, {}> {
           <h1 className={scssStyles.scss}>scss!</h1>
         </div>
         <Button type="primary" onClick={loginStore.getUserInfo}>点击请求</Button>
-        <Button className="ant-btn-y" type="danger" onClick={loginStore.getError}>点击错误的请求</Button>
+        <div className={scssStyles.btnContainer}>
+          <Button type="danger" onClick={loginStore.getError}>点击错误的请求</Button>
+        </div>
         {
           loginStore.loading
             ?
