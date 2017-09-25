@@ -18,3 +18,6 @@ typescript + react的简单起手模板
 ### run
 1. npm i
 2. npm run dev
+
+### other
+1. 快速生成组件目录及基础文件: npm run add -- Layout -t component(view)
