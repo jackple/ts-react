@@ -9,14 +9,13 @@ class LoginStore {
   public loading: boolean = false
 
   @action
-  getUserInfo = () => {
+  getUserInfo = async(): Promise<any> => {
     this.loading = true
-    api.getUserInfo({}).then(res => {
+    try {
+      const res = await api.getUserInfo({})
       this.userInfo = res
-      this.loading = false
-    }).catch(err => {
-      this.loading = false
-    })
+    } catch (err) {}
+    this.loading = false
   }
 
   @action

@@ -18,11 +18,12 @@ ReactDOM.render(
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('router', () => {
+  module.hot.accept(['router', 'store'], () => {
     const NextApp = require<RequireImport>('router').default
+    const NextStore = require<RequireImport>('store').default
     ReactDOM.render(
       <AppContainer>
-        <Provider {...store}>
+        <Provider {...NextStore}>
           <NextApp />
         </Provider>
       </AppContainer>,

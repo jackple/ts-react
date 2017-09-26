@@ -30,7 +30,7 @@ export default class Hello extends React.Component<Props, {}> {
         {
           loginStore.loading
             ?
-            <div>loading...</div>
+            <div>loading......</div>
             :
             <div>{JSON.stringify(loginStore.userInfo)}</div>
         }
