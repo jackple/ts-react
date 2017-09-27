@@ -1,11 +1,16 @@
 import * as React from 'react'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
-// import Home from 'views/Home'
 import Error from 'components/Error'
 import asyncComponent from './asyncComponent'
-const Home = asyncComponent(() => System.import('views/Home').then(mod => mod.default).catch((err) => { return 101 }))
-const Login = asyncComponent(() => System.import('views/Login').then(mod => mod.default).catch((err) => { return 101 }))
+const Home = asyncComponent(() => System.import('views/Home').then(mod => mod.default).catch(err => {
+  console.error(err)
+  return 101
+}))
+const Login = asyncComponent(() => System.import('views/Login').then(mod => mod.default).catch(err => {
+  console.error(err)
+  return 101
+}))
 
 // 权限控制
 const PrivateRoute = ({ component: Component, ...rest }) => (

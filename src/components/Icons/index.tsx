@@ -20,25 +20,6 @@ interface IconProps {
 }
 export default class Icon extends React.Component<IconProps, {}> {
 
-    static propTypes = {
-        color: React.PropTypes.string,
-        className: React.PropTypes.string,
-        height: React.PropTypes.number,
-        kind: React.PropTypes.oneOf(iconList).isRequired,
-        onClick: React.PropTypes.func,
-        preview: React.PropTypes.bool,
-        size: React.PropTypes.number,
-        style: React.PropTypes.oneOfType([
-            React.PropTypes.array,
-            React.PropTypes.object
-        ]),
-        width: React.PropTypes.number,
-        wrapperStyle: React.PropTypes.oneOfType([
-            React.PropTypes.array,
-            React.PropTypes.object
-        ])
-    }
-
     static defaultProps = {
         className: '',
         color: '#000',
