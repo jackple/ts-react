@@ -14,7 +14,6 @@ class WorldStore {
     try {
       const res = await api.getUserInfo({})
       this.userInfo = res
-      alert('world')
     } catch (err) {}
     this.loading = false
   }

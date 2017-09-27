@@ -14,7 +14,6 @@ class HelloStore {
     try {
       const res = await api.getUserInfo({})
       this.userInfo = res
-      alert('hello1')
     } catch (err) {}
     this.loading = false
   }

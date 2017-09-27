@@ -1,12 +1,5 @@
-@import "base";
 @import "reset";
-
-body {
-  font-family: "Microsoft YaHei";
-  font-size: 14px;
-  color: black;
-  background-color: gray;
-}
+@import "base";
 
 .relative {
   position: relative;
