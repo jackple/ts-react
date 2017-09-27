@@ -20,4 +20,4 @@ typescript + react的简单起手模板
 2. npm run dev
 
 ### other
-- 快速生成组件目录及基础文件: npm run add -- Layout -t component/view  (多谢[Allenice](http://www.allenice233.com/))
+- 快速生成组件目录及基础文件: npm run add -- ComponentName -t component/view  (多谢[Allenice](http://www.allenice233.com/))
