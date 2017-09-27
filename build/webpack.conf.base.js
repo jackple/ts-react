@@ -14,7 +14,7 @@ module.exports = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client?http://localhost:3333/__webpack_hmr',
+      'webpack-hot-middleware/client',
       './src/index.tsx'
     ]
   },

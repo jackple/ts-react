@@ -1,7 +1,9 @@
-import loginStore from './loginStore'
+import helloStore from './helloStore'
+import worldStore from './worldStore'
 
 const store = {
-  loginStore
+  helloStore,
+  worldStore
 }
 
 export default store

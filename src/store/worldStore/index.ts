@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import * as api from 'util/api'
 
-class LoginStore {
+class WorldStore {
   @observable
   public userInfo: any = null
 
@@ -14,6 +14,7 @@ class LoginStore {
     try {
       const res = await api.getUserInfo({})
       this.userInfo = res
+      alert('world')
     } catch (err) {}
     this.loading = false
   }
@@ -24,9 +25,9 @@ class LoginStore {
   }
 }
 
-const loginStore = new LoginStore()
+const worldStore = new WorldStore()
 
 export {
-  loginStore as default,
-  LoginStore
+  worldStore as default,
+  WorldStore
 }

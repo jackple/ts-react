@@ -5,7 +5,9 @@ import Hello from 'components/Hello'
 export default class Login extends React.Component<{}, {}> {
   render() {
     return (
-      <Hello />
+      <div>
+        login...
+      </div>
     )
   }
 }

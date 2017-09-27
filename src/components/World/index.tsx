@@ -2,24 +2,24 @@ import * as React from 'react'
 import { inject, observer } from 'mobx-react'
 import classNames from 'classnames'
 
-import * as styles from './index.css'
+import * as styles from './../Hello/index.css'
 import * as scssStyles from './index.scss'
-import { HelloStore } from 'store/helloStore'
+import { WorldStore } from 'store/worldStore'
 import Icon from 'components/Icons'
 import { Button } from 'antd'
 
 interface Props {
-  helloStore?: HelloStore
+  worldStore?: WorldStore
 }
 
-@inject('helloStore')
+@inject('worldStore')
 @observer
-export default class Hello extends React.Component<Props, {}> {
+export default class World extends React.Component<Props, {}> {
   render() {
-    const store = this.props.helloStore
+    const store = this.props.worldStore
     return (
       <div className="text-center">
-        <h1 className={classNames(styles.base, styles.test)}>Hello...</h1>
+        <h1 className={classNames(styles.base, styles.test)}>World...</h1>
         <div>
           <h1 className={scssStyles.scss}>scss!!</h1>
         </div>
