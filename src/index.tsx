@@ -1,26 +1,37 @@
+import 'styles/app.scss'
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { Provider } from 'mobx-react'
+import { rehydrate, hotRehydrate, store as rfxStore } from 'rfx-core'
 
-import Main from './main'
+import App from 'router'
+import store from 'store'
 import { RequireImport } from 'types/interface'
 
-ReactDOM.render(
-  <Main />,
-  document.getElementById('app') as HTMLElement
-)
+rfxStore.setup(store)
+const rStore = rehydrate()
 
 // Hot Module Replacement API
 if (module.hot) {
   (async() => {
     const { AppContainer } = await System.import('react-hot-loader')
-    module.hot.accept(['./main'], () => {
-      const NextMain = require<RequireImport>('./main').default
-      ReactDOM.render(
-        <AppContainer>
-          <NextMain />
-        </AppContainer>,
-        document.getElementById('app') as HTMLElement
-      )
+    module.hot.accept(['router'], () => {
+      const NextApp = require<RequireImport>('router').default
+      render(NextApp, true)
     })
   })()
 }
+
+const render = (Component, hot: boolean) => {
+  const _store = hot ? hotRehydrate() : rStore
+  console.log(_store)
+  ReactDOM.render(
+    <Provider {..._store}>
+      <Component />
+    </Provider>,
+    document.getElementById('app') as HTMLElement
+  )
+}
+
+render(App, false)

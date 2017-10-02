@@ -1,9 +1,11 @@
-import helloStore from './helloStore'
-import worldStore from './worldStore'
+import { store as rfxStore } from 'rfx-core'
+
+import HelloStore from './helloStore'
+import WorldStore from './worldStore'
 
 const store = {
-  helloStore,
-  worldStore
+  HelloStore,
+  WorldStore
 }
 
 export default store

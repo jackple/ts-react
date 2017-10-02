@@ -4,19 +4,19 @@ import classNames from 'classnames'
 
 import * as styles from './index.css'
 import * as scssStyles from './index.scss'
-import { HelloStore } from 'store/helloStore'
+import HelloStore from 'store/helloStore'
 import Icon from 'components/Icons'
 import { Button } from 'antd'
 
 interface Props {
-  helloStore?: HelloStore
+  HelloStore?: HelloStore
 }
 
-@inject('helloStore')
+@inject('HelloStore')
 @observer
 export default class Hello extends React.Component<Props, {}> {
   render() {
-    const store = this.props.helloStore
+    const store = this.props.HelloStore
     return (
       <div className="text-center">
         <h1 className={classNames(styles.base, styles.test)}>Hello...</h1>
@@ -30,7 +30,7 @@ export default class Hello extends React.Component<Props, {}> {
         {
           store.loading
             ?
-            <div>loading......</div>
+            <div>loading...</div>
             :
             <div>{JSON.stringify(store.userInfo)}</div>
         }

@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import * as api from 'util/api'
 
-class HelloStore {
+export default class HelloStore {
   @observable
   public userInfo: any = null
 
@@ -22,11 +22,4 @@ class HelloStore {
   getError = () => {
     api.getError({})
   }
-}
-
-const helloStore = new HelloStore()
-
-export {
-  helloStore as default,
-  HelloStore
 }
