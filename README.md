@@ -5,7 +5,7 @@ typescript + react的简单起手模板
 - typescript
 - react
 - react-router-4
-- hot-reload
+- component hot reload
 - mobx
 - async component
 - svg icon

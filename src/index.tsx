@@ -27,5 +27,8 @@ if (module.hot) {
       const NextApp = require<RequireImport>('router').default
       render(NextApp)
     })
+    module.hot.accept(['store'], () => {
+      window.location.reload()
+    })
   })()
 }
