@@ -4,19 +4,19 @@ import classNames from 'classnames'
 
 import * as styles from './../Hello/index.css'
 import * as scssStyles from './index.scss'
-import WorldStore from 'store/worldStore'
+import { WorldStore } from 'store/worldStore'
 import Icon from 'components/Icons'
 import { Button } from 'antd'
 
 interface Props {
-  WorldStore?: WorldStore
+  worldStore?: WorldStore
 }
 
-@inject('WorldStore')
+@inject('worldStore')
 @observer
 export default class World extends React.Component<Props, {}> {
   render() {
-    const store = this.props.WorldStore
+    const store = this.props.worldStore
     return (
       <div className="text-center">
         <h1 className={classNames(styles.base, styles.test)}>World...</h1>
