@@ -1,7 +1,8 @@
 import { observable, action } from 'mobx'
-import * as api from 'util/api'
 
-class HelloStore {
+import { StoreExt } from 'util/reactExt'
+
+class HelloStore extends StoreExt {
   @observable
   public userInfo: any = null
 
@@ -12,15 +13,16 @@ class HelloStore {
   getUserInfo = async(): Promise<any> => {
     this.loading = true
     try {
-      const res = await api.getUserInfo({})
+      const res = await this.api.getUserInfo({})
       this.userInfo = res
+      this.$message.success('success!!!')
     } catch (err) {}
     this.loading = false
   }
 
   @action
   getError = () => {
-    api.getError({})
+    this.api.getError({})
   }
 }
 

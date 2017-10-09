@@ -1,7 +1,13 @@
 import * as React from 'react'
 
+import * as styles from './index.scss'
+
 const Error = () => (
-  <h1>404</h1>
+  <div className={styles.centered}>
+    <div className={styles.emoji}>😭</div>
+    <p className={styles.title}>Ooooops!</p>
+    <p>This page doesn't exist anymore.</p>
+  </div>
 )
 
 export default Error
