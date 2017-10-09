@@ -10,13 +10,13 @@ import * as api from 'util/api'
 interface Props {}
 interface States {}
 
-export class ComponentExt<P extends Props, S extends States> extends React.Component<P, S> {
+export class ComponentExt<P, S> extends React.Component<P, S> {
   readonly api = api
   readonly $message = message
   readonly $notification = notification
 }
 
-export class PureComponentExt<P extends Props, S extends States> extends React.PureComponent<P, S> {
+export class PureComponentExt<P, S> extends React.PureComponent<P, S> {
   readonly api = api
   readonly $message = message
   readonly $notification = notification

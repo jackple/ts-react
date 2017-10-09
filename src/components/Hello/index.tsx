@@ -31,7 +31,6 @@ export default class Hello extends ComponentExt<Props, States> {
     const store = this.props.helloStore
     return (
       <div className="text-center">
-        <Icon type="step-backward" />
         <h1 className={classNames(styles.base, styles.test)}>Hello...{this.state.helleState}</h1>
         <div>
           <h1 className={scssStyles.scss}>scss!!</h1>
