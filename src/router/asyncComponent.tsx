@@ -3,30 +3,36 @@
  */
 import * as React from 'react'
 
+interface States {
+  Component: typeof React.Component
+}
+
 export default function asyncComponent(getComponent) {
-  return class AsyncComponent extends React.Component {
-    static Component = null
-    state = {
-      Component: AsyncComponent.Component
+  return class AsyncComponent extends React.Component<{}, States> {
+    constructor(props) {
+      super(props)
+      this.state = {
+        Component: null
+      }
     }
 
-    componentWillMount() {
+    async componentWillMount() {
       if (!this.state.Component) {
-        getComponent().then(Component => {
-          AsyncComponent.Component = Component
-          this.setState({ Component })
-        })
+        try {
+          const Component: typeof React.Component = await getComponent()
+          this.setState({
+            Component
+          })
+        } catch (err) {
+          console.error(err)
+        }
       }
     }
 
     render() {
       const { Component } = this.state
       if (Component) {
-        if (Component === 101) {
-          return null
-        } else {
-          return <Component { ...this.props} />
-        }
+        return <Component { ...this.props} />
       }
       return null
     }

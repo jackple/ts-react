@@ -3,19 +3,13 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import Error from 'components/Error'
 import asyncComponent from './asyncComponent'
-const Home = asyncComponent(() => System.import('views/Home').then(mod => mod.default).catch(err => {
-  console.error(err)
-  return 101
-}))
-const Login = asyncComponent(() => System.import('views/Login').then(mod => mod.default).catch(err => {
-  console.error(err)
-  return 101
-}))
+const Home = asyncComponent(() => System.import('views/Home').then(mod => mod.default))
+const Login = asyncComponent(() => System.import('views/Login').then(mod => mod.default))
 
 // 权限控制
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    true ? (
+    false ? (
       <Component {...props} />
     ) : (
         <Redirect to={{
@@ -30,7 +24,8 @@ const App = () => (
   <Router>
     <div>
       <Switch>
-        <PrivateRoute exact path="/" component={Home} />
+        <Route exact path="/" component={Home} />
+        <PrivateRoute exact path="/home" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route component={Error} />
       </Switch>
