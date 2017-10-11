@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx'
+import { observable, action, runInAction, computed } from 'mobx'
 
 import { StoreExt } from 'util/reactExt'
 
@@ -10,19 +10,33 @@ class HelloStore extends StoreExt {
   public loading: boolean = false
 
   @action
-  getUserInfo = async(): Promise<any> => {
+  getUserInfo = async (): Promise<any> => {
     this.loading = true
     try {
       const res = await this.api.getUserInfo({})
-      this.userInfo = res
+      runInAction(() => {
+        this.userInfo = res
+      })
       this.$message.success('success!!!')
-    } catch (err) {}
-    this.loading = false
+    } catch (err) { }
+    runInAction(() => {
+      this.loading = false
+    })
   }
 
   @action
-  getError = () => {
-    this.api.getError({})
+  getError = async (): Promise<any> => {
+    this.loading = true
+    try {
+      await this.api.getError({})
+    } catch (err) { }
+    runInAction(() => {
+      this.loading = false
+    })
+  }
+
+  @computed get computedTest() {
+    return JSON.stringify(this.userInfo) + this.loading
   }
 }
 

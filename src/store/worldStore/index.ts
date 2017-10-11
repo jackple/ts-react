@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx'
+import { observable, action, runInAction } from 'mobx'
 import * as api from 'util/api'
 
 class WorldStore {
@@ -9,18 +9,28 @@ class WorldStore {
   public loading: boolean = false
 
   @action
-  getUserInfo = async(): Promise<any> => {
+  getUserInfo = async (): Promise<any> => {
     this.loading = true
     try {
       const res = await api.getUserInfo({})
-      this.userInfo = res
-    } catch (err) {}
-    this.loading = false
+      runInAction(() => {
+        this.userInfo = res
+      })
+    } catch (err) { }
+    runInAction(() => {
+      this.loading = false
+    })
   }
 
   @action
-  getError = () => {
-    api.getError({})
+  getError = async (): Promise<any> => {
+    this.loading = true
+    try {
+      await api.getError({})
+    } catch (err) { }
+    runInAction(() => {
+      this.loading = false
+    })
   }
 }
 
