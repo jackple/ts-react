@@ -21,3 +21,6 @@ typescript + react的简单起手模板
 
 ### other
 - 快速生成组件目录及基础文件: npm run add -- ComponentName -t component/view  (多谢[Allenice](http://www.allenice233.com/))
+
+### electron支持
+- [ts-react-electron](https://github.com/jackple/ts-react-electron)
