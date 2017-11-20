@@ -6,9 +6,9 @@ import { Provider } from 'mobx-react'
 import { useStrict } from 'mobx'
 import { AppContainer } from 'react-hot-loader'
 
-import App from 'router'
-import store from 'store'
-import { RequireImport } from 'types/interface'
+import App from './router'
+import store from './store'
+import { RequireImport } from './types/interface'
 
 useStrict(true)
 

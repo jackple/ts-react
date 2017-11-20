@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
-import Error from 'components/Error'
+import Error from './../components/Error'
 import asyncComponent from './asyncComponent'
-const Home = asyncComponent(() => System.import('views/Home').then(mod => mod.default))
-const Login = asyncComponent(() => System.import('views/Login').then(mod => mod.default))
+const Home = asyncComponent(() => System.import('./../views/Home').then(mod => mod.default))
+const Login = asyncComponent(() => System.import('./../views/Login').then(mod => mod.default))
 
 // 权限控制
 const PrivateRoute = ({ component: Component, ...rest }) => (

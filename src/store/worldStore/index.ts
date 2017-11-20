@@ -1,5 +1,5 @@
 import { observable, action, runInAction } from 'mobx'
-import * as api from 'util/api'
+import * as api from './../../util/api'
 
 class WorldStore {
   @observable

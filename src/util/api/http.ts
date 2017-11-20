@@ -1,6 +1,6 @@
 import axios from 'axios'
 import * as qs from 'qs'
-import { AxiosRequestConfig, HttpResquest } from 'types/interface'
+import { AxiosRequestConfig, HttpResquest } from './../../types/interface'
 import { message } from 'antd'
 
 enum HTTPERROR {

@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { ComponentExt } from 'util/reactExt'
 import { inject, observer } from 'mobx-react'
 import { observable, action, runInAction, computed } from 'mobx'
 import classNames from 'classnames'
+import { Button, Icon } from 'antd'
 
+import { ComponentExt } from './../../util/reactExt'
 import * as styles from './index.css'
 import * as scssStyles from './index.scss'
-import { HelloStore } from 'store/helloStore'
-import SvgIcon from 'components/Icons'
-import { Button, Icon } from 'antd'
+import { HelloStore } from './../../store/helloStore'
+import SvgIcon from './../../components/Icons'
 
 interface Props {
   helloStore?: HelloStore
@@ -41,9 +41,9 @@ export default class Hello extends ComponentExt<Props, {}> {
         {
           store.loading
             ?
-            <div>loading...</div>
+            <div id="loading">loading...</div>
             :
-            <div>{JSON.stringify(store.userInfo)}</div>
+            <div id="user-info">{JSON.stringify(store.userInfo)}</div>
         }
         <SvgIcon kind="stage" color="red" />
       </div>

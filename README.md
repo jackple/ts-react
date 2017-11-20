@@ -11,6 +11,7 @@ typescript + react的简单起手模板
 - svg icon
 - 接入antd并可按需加载
 - import (s)css时自动生成.(s)css.d.ts
+- jest
 
 ### suggested use
 - [mobx chrome devtool](https://chrome.google.com/webstore/detail/mobx-developer-tools/pfgnfdagidkfgccljigdamigbcnndkod) (非必须)

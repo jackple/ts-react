@@ -16,6 +16,10 @@ declare interface ObjectConstructor {
   assign(target: any, ...sources: any[]): any
 }
 
+declare var EnzymeShallow: any
+declare var EnzymeRender: any
+declare var EnzymeMount: any
+
 // for style loader
 // declare module '*.scss' {
 //   const styles: any

@@ -1,6 +1,6 @@
 import { observable, action, runInAction, computed } from 'mobx'
 
-import { StoreExt } from 'util/reactExt'
+import { StoreExt } from './../../util/reactExt'
 
 class HelloStore extends StoreExt {
   @observable
@@ -8,6 +8,11 @@ class HelloStore extends StoreExt {
 
   @observable
   public loading: boolean = false
+
+  @action
+  setLoading = (loading: boolean) => {
+    this.loading = loading
+  }
 
   @action
   getUserInfo = async (): Promise<any> => {
