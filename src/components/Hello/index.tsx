@@ -30,7 +30,7 @@ export default class Hello extends ComponentExt<Props, {}> {
     const store = this.props.helloStore
     return (
       <div className="text-center">
-        <h1 className={classNames(styles.base, styles.test)} onClick={this.changeHelleState}>Hello...{this.helleState}</h1>
+        <h1 className={classNames(styles.base, styles.test)} onClick={this.changeHelleState}>Hello....{this.helleState}</h1>
         <div>
           <h1 className={scssStyles.scss}>scss!!{store.computedTest}</h1>
         </div>
