@@ -45,7 +45,7 @@ export default class Hello extends ComponentExt<Props, {}> {
             :
             <div>{JSON.stringify(store.userInfo)}</div>
         }
-        <SvgIcon kind="stage" />
+        <SvgIcon kind="stage" color="red" />
       </div>
     )
   }
