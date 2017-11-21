@@ -8,7 +8,8 @@ declare var process: {
   env: {
     NODE_ENV: string,
     APP_ENV: string,
-    ENV_CONFIG: any
+    ENV_CONFIG: any,
+    baseURL: string
   }
 }
 

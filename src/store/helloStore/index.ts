@@ -10,11 +10,6 @@ class HelloStore extends StoreExt {
   public loading: boolean = false
 
   @action
-  setLoading = (loading: boolean) => {
-    this.loading = loading
-  }
-
-  @action
   getUserInfo = async (): Promise<any> => {
     this.loading = true
     try {

@@ -1,5 +1,6 @@
 const Enzyme = require('enzyme')
 const Adapter = require('enzyme-adapter-react-16')
+const config = require('./build/config/default.json')
 
 const { shallow, render, mount } = Enzyme
 
@@ -9,3 +10,9 @@ Enzyme.configure({ adapter: new Adapter() })
 global.EnzymeShallow = shallow
 global.EnzymeRender = render
 global.EnzymeMount = mount
+
+// 设置环境变量
+process.env['NODE_ENV'] = 'test'
+process.env['APP_ENV'] = 'dev'
+process.env['ENV_CONFIG'] = {}
+process.env['baseURL'] = config.dev.baseURL

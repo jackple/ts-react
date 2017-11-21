@@ -4,13 +4,13 @@ import { HelloStore } from './../../../store/helloStore'
 import Hello from './../../../components/Hello'
 
 describe('Hello.functional', () => {
-
-  it('loading exits', () => {
+  it('getUserInfo done', async () => {
     const store = new HelloStore()
-    store.setLoading(true)
+    await store.getUserInfo()
+    expect(store.userInfo.success).toBe(true)
 
-    const wrapper = EnzymeRender(<Hello helloStore={store} />)
-    expect(wrapper.find('#loading').length).toBe(1)
-    expect(wrapper.find('#user-info').length).toBe(0)
+    const wrapper = EnzymeMount(<Hello helloStore={store} />)
+    expect(wrapper.find('#loading').length).toBe(0)
+    expect(wrapper.find('#user-info').length).toBe(1)
   })
 })

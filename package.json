@@ -5,7 +5,7 @@
   "author": "Jackple <359310444@qq.com>",
   "private": true,
   "scripts": {
-    "test": "cross-env ENV_CONFIG={baseURL:'http://www.easy-mock.com/mock/5909a6527a878d73716ea5bb/example'} jest",
+    "test": "jest",
     "add": "node ./tool/cli.js add",
     "dev": "node build/dev-server.js",
     "qa": "cross-env APP_ENV=qa npm run build",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
+    "@types/enzyme": "^3.1.4",
     "@types/jest": "^21.1.6",
     "@types/node": "^8.0.53",
     "@types/react": "^16.0.25",
