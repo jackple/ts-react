@@ -1,8 +1,0 @@
-.base {
-  font-size: 80px;
-}
-
-.test {
-  composes: base;
-  color: yellow;
-}
